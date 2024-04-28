@@ -1,0 +1,32 @@
+server:
+  port: 8092
+  error:
+    include-message: always
+
+spring:
+  # Kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    group-id: transformation-executor-group
+    topics: FILE_ALTER
+
+aws:
+  access:
+    key:
+      id: ${PERSONAL_AWS_ACCESS_KEY_ID}
+      secret: ${PERSONAL_AWS_ACCESS_KEY_SECRET}
+  s3:
+    region:
+      name: "us-east-1"
+    bucket:
+      name: "aniket-mahangare-test-bucket"
+
+external:
+  transformation-service:
+    base-url: http://localhost:8091
+    routes:
+      update-transformation-route: "/v1/transformations/{transformationId}"
+
+logging:
+  level:
+    root: info

@@ -1,0 +1,19 @@
+socket-server:
+  port: 8093
+  host: 127.0.0.1
+
+server:
+  port: 8094
+
+socket:
+  client:
+    event:
+      transformation-complete: transformation-complete
+
+# Redis Configuration
+spring:
+  data:
+    redis:
+      host: localhost
+      port: 6380
+      password: ${PERSONAL_PROJECT_LOCAL_REDIS_PASSWORD}

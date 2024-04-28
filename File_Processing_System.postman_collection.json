@@ -1,0 +1,180 @@
+{
+	"info": {
+		"_postman_id": "f50147cc-f9a2-4888-bc7f-f2e2f9d465db",
+		"name": "File Processing System",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "4882083"
+	},
+	"item": [
+		{
+			"name": "Transformation Service",
+			"item": [
+				{
+					"name": "Transformation Entity APIs",
+					"item": [
+						{
+							"name": "Create Transformations",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "[\n    {\n        \"file\": {\n            \"userId\": 123456789,\n            \"sourceFileId\": \"1-P-LikO1tIdZ7IrgxnBAkc4XgFXSq8Yi\",\n            \"sourceType\": \"GOOGLE_DRIVE\",\n            \"mimeType\": \"image/jpeg\",\n            \"sourceFileAuthKey\": \"ya29.a0Ad52N3_GxpgPnoFKO4yAbn2kgv7RyRCbgj83OPee2s8RebncBYFJbrRrlpDrrqnvpGOLxq_HP4ImZzgZNIq0Nl9YHnau3plKQeRP1Eevmf60XocNWSxUlKoxQTFM4YahpXY83Kgm4YhaFnA7WjQJmYLh3r5udEsDJAaCgYKAZUSARISFQHGX2MivdbVZ2Hc_44B5dKNACF-eg0169\"\n        },\n        \"transformationName\": \"CAPITALIZE_FILE\"\n    }\n]",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/v1/transformations",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"v1",
+										"transformations"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Update Transformation",
+							"request": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transformationStatus\": \"COMPLETED\",\n    \"outputFileId\": 567890\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/v1/transformations/42876572718546944",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"v1",
+										"transformations",
+										"42876572718546944"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transformation",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/v1/transformations/42680451072688128",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"v1",
+										"transformations",
+										"42680451072688128"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get Transformations for User",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/v1/transformations/user/123456789",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"v1",
+										"transformations",
+										"user",
+										"123456789"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Transformation Category Entity APIs",
+					"item": [
+						{
+							"name": "Create Transformations Copy",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"transformationName\": \"CAPITALIZE_FILE\",\n    \"transformationType\": \"FILE_ALTER\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:8091/v1/transformation-categories",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "8091",
+									"path": [
+										"v1",
+										"transformation-categories"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				}
+			]
+		}
+	]
+}

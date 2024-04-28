@@ -1,0 +1,40 @@
+server:
+  port: 8091
+  error:
+    include-message: always
+
+aws:
+  cloudfront:
+    domain: ${AWS_PERSONAL_CLOUDFRONT_DOMAIN}
+    key-pair-id: ${AWS_CLOUDFRONT_KEY_PAIR_ID}
+    private-key: ${AWS_CLOUDFRONT_PRIVATE_KEY}
+
+spring:
+  # Database Configuration
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+  datasource:
+    url: jdbc:mysql://localhost:3309/transformations
+    username: root
+    password: ${PERSONAL_PROJECT_LOCAL_MYSQL_PASSWORD}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # Kafka
+  kafka:
+    bootstrap-servers: localhost:9092
+    topics:
+      LLM_REQUEST: llm-request-topic
+
+  # Redis Configuration
+  data:
+    redis:
+      host: localhost
+      port: 6380
+      password: ${PERSONAL_PROJECT_LOCAL_REDIS_PASSWORD}
+
+logging:
+  level:
+    root: info
