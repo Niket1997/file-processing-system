@@ -33,11 +33,13 @@ public class TransformationController {
         return transformationService.updateTransformation(transformationId, request);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/{transformationId}")
     public TransformationResponse getTransformation(@PathVariable Long transformationId) {
         return transformationService.getTransformation(transformationId);
     }
 
+    @CrossOrigin(origins = "*")
     @GetMapping("/user/{userId}")
     public List<TransformationResponse> getTransformationForUser(@PathVariable Long userId) {
         return transformationService.getTransformationForUser(userId);
