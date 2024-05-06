@@ -91,6 +91,9 @@
             if (response.error !== undefined) {
                 throw (response);
             }
+            console.log("response is:");
+            console.log(response);
+            console.log("");
             accessToken = response.access_token;
             console.log("Access Token is : >>>>>>>", accessToken);
             document.getElementById('signout_button').style.visibility = 'visible';

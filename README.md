@@ -19,7 +19,7 @@ Developers should add newer types of asynchronous transforms for files that are 
 
 # High Level Design
 #### Note: We'll use [Google Picker API](https://developers.google.com/drive/picker/guides/overview) to access user's files from Google Drive.
-![ReadSystemWithCDN.png](readme-assets/ReadSystemWithCDN.png)
+![ReadSystemWithCDN.png](readme-assets/FileProcessingSystemCDN.png)
 
 ## How to generate following AWS secrets
 #### AWS Personal access Tokens to access S3
